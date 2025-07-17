@@ -1,0 +1,10 @@
+#ifndef __LED_H
+#define __LED_H	 
+
+#define LED0 PBout(1)
+
+#include "stm32f10x.h"
+void LED_Init(void);//≥ı ºªØ
+
+		 				    
+#endif

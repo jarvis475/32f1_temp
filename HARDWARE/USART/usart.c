@@ -64,17 +64,18 @@ void uart1_sent_string(char* buf)
 }
 
 //发送温度读数  
-void uart1_sent_tem(float tem,float set_temp)
+void uart1_sent_tem(float tem,float set_temp,int PWM_Duty)
 {
-	u8 buff[10];
-	buff[0]=0xAA;
-	memcpy(&buff[1], &tem, 4);
-	memcpy(&buff[5], &set_temp, 4);
-	buff[9]=0x55;
-  for(int i=0;i<10;i++)
-	{
-		uart1_sent_byte(buff[i]);
-	}
+u8 buff[12];
+buff[0]=0xAA;
+memcpy(&buff[1], &tem, 4);
+memcpy(&buff[5], &set_temp, 4);
+memcpy(&buff[9],&PWM_Duty,2);
+buff[11]=0x55;
+  for(int i=0;i<12;i++)
+{
+uart1_sent_byte(buff[i]);
+}
 }
 
 // 中断服务函数

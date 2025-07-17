@@ -1,5 +1,5 @@
 #include "sys.h"
-#include "UserFunction.h"
+#include "PidContoller.h"
 //#include "UserConfiguration.h"
 
 //绝对式PID算法
@@ -60,7 +60,7 @@ void PID_IncrementMode(PID_IncrementType* PID)
 }
 
 /*****************************************Power Control PID***********************************************/
-extern short temperature,setted_temperature;
+extern short nowtem;
 
 float temperatureTag, temperatureNow;//定义一个目标温度，采样速度，控制量
 
@@ -68,14 +68,14 @@ PID_AbsoluteType PID_Control;//定义PID算法的结构体
 extern u16 PWM_Duty;
 void User_PidPWMControl(float Tag)
 {
-	temperatureNow = temperature/10.0f; temperatureTag = Tag/10.0f;
+	temperatureNow = nowtem/10.0f; temperatureTag = Tag;
 
 	PID_Control.errNow = temperatureTag - temperatureNow; //计算并写入温度误差
 
-	PID_Control.kp      = 1;             //写入比例系数
-	PID_Control.ki      = 0;              //写入积分系数
-	PID_Control.kd      = (float)0;              //写入微分系数
-	PID_Control.errILim = (float)2000;           //写入误差积分上限为1000 下限为-1000
+	PID_Control.kp      = 70.0f;             //写入比例系数
+	PID_Control.ki      = 1.3f;              //写入积分系数
+	PID_Control.kd      = (float)0.01;              //写入微分系数
+	PID_Control.errILim = (float)500.0;           //写入误差积分上限为1000 下限为-1000
 
 	PID_AbsoluteMode(&PID_Control);       //执行绝对式PID算法
 

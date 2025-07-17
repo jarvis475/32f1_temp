@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F10X_MD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\CORE;..\..\FWLIB;..\..\SYSTEM\inc;..\..\SYSTEM\src;..\..\USER;..\..\HARDWARE\LED;..\..\SYS\sys;..\..\SYS\delay;..\..\SYS\sys;..\..\HARDWARE\IIC;..\..\HARDWARE\OLED;..\..\HARDWARE\DS18B20;..\..\HARDWARE\KEY;..\..\HARDWARE\TIMER;..\..\HARDWARE\PID;..\..\HARDWARE\USART</IncludePath>
+              <IncludePath>..\..\CORE;..\..\FWLIB;..\..\SYSTEM\inc;..\..\SYSTEM\src;..\..\USER;..\..\HARDWARE\LED;..\..\SYS\sys;..\..\SYS\delay;..\..\SYS\sys;..\..\HARDWARE\IIC;..\..\HARDWARE\OLED;..\..\HARDWARE\DS18B20;..\..\HARDWARE\KEY;..\..\HARDWARE\TIMER;..\..\HARDWARE\USART;..\..\HARDWARE\PID</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -608,7 +608,7 @@
             <File>
               <FileName>PidContoller.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\ks\HARDWARE\PID\PidContoller.c</FilePath>
+              <FilePath>..\..\HARDWARE\PID\PidContoller.c</FilePath>
             </File>
           </Files>
         </Group>

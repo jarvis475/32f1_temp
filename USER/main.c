@@ -104,21 +104,19 @@ int main(void)
 			
 			while(a==1)
 			{
-				OLED_ShowCHinese(20,1,10);
-				OLED_ShowCHinese(35,1,11);
-				OLED_ShowCHinese(50,1,12);
-				OLED_ShowCHinese(75,1,13);
-				OLED_ShowCHinese(90,1,14);
-				OLED_ShowCHinese(105,1,15);						//显示姓名
+				OLED_ShowString(0,3,"key2 +  key3 -");
+				OLED_ShowString(0,5,"key4=");
+				OLED_ShowCHinese(40,5,13);
+				OLED_ShowCHinese(55,5,14);
 					
 				char tem3[10];
 				sprintf(tem3, "%.1f", tem2);
-				OLED_ShowCHinese(0,5,8);
-				OLED_ShowCHinese(15,5,9);
-				OLED_ShowCHinese(30,5,0);
-				OLED_ShowCHinese(45,5,1);
-				OLED_ShowString(65,5,"=");
-				OLED_ShowString(75,5,tem3);					//OLED显示设定温度
+				OLED_ShowCHinese(0,0,8);
+				OLED_ShowCHinese(15,0,9);
+				OLED_ShowCHinese(30,0,0);
+				OLED_ShowCHinese(45,0,1);
+				OLED_ShowString(65,0,"=");
+				OLED_ShowString(75,0,tem3);					//OLED显示设定温度
 				
 				if(KEY2_Scan())
 				tem2=tem2+1;
@@ -126,7 +124,7 @@ int main(void)
 				tem2=tem2-1;
 				//AT24CXX_WriteLenByte(0x40, tem2*10, 4); 
 				
-				if(KEY4_Scan())
+				if(KEY4_Scan()|KEY1_Scan())
 				{
 					a=0;
 					delay_ms(200);

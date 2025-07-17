@@ -20,7 +20,7 @@ u8 KEY1_Scan(void)
 {	 
 	if(K1==0)
 	{
-		delay_ms(20);
+		delay_ms(10);
 		if(K1==0)
 		{
 			return 1;
@@ -33,7 +33,7 @@ u8 KEY2_Scan(void)
 {	 
 	if(K2==0)
 	{
-		delay_ms(20);
+		delay_ms(10);
 		if(K2==0)
 		{
 			return 1;
@@ -45,7 +45,7 @@ u8 KEY3_Scan(void)
 {	 
 	if(K3==0)
 	{
-		delay_ms(20);
+		delay_ms(10);
 		if(K3==0)
 		{
 			return 1;
@@ -58,7 +58,7 @@ u8 KEY4_Scan(void)
 {	 
 	if(K4==0)
 	{
-		delay_ms(20);
+		delay_ms(10);
 		if(K4==0)
 		{
 			return 1;
